@@ -1,0 +1,44 @@
+<div class="container-fluid login">
+    <button class="btn btn-info mt-5" [routerLink]="['/home']"   >Back to home page</button>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+      <div class="card col-md-6 col-sm-10 ">
+        <div class="d-flex justify-content-center align-items-center login-header">
+            <img src="../../../../assets/patient.jpg" alt="" srcset="">
+            <h5 class="ps-2 text-light">pationt login</h5>
+        </div>
+      
+        <div class="card-body">
+          <h5 class="card-title text-center p-4">Login to your account</h5>
+          <form [formGroup]="form">
+           <div class="form-group">
+              <input type="text"  class="form-control" placeholder="email id" formControlName="email">
+              <div class="text-danger" *ngFor=" let error of errorMessages.email">
+                <ng-container *ngIf="email?.hasError(error.type)&& (email?.dirty || email?.touched)">
+                  {{error.message}}
+                </ng-container>
+              
+              </div>
+            </div>
+           <div class="form-group mt-3">
+              <input type="text"  class="form-control" placeholder="password" formControlName="password">
+              <div class="text-danger" *ngFor=" let error of errorMessages.password">
+                <ng-container *ngIf="password?.hasError(error.type) && (password?.dirty|| password?.touched)">
+                  {{error.message}}
+                </ng-container>
+              </div>
+            </div>
+            .<div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"  value="checkedValue" >
+               Reminder me
+              </label>
+            </div>
+            <div class="d-grid  mt-4 mb-5">
+              <div class="text-light login-btn text-center p-2" (click)="login()">log in</div>
+            </div>
+           
+          </form>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,478 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Assignment-primary: mat.define-palette(mat.$indigo-palette);
+$Assignment-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Assignment-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Assignment-theme: mat.define-light-theme((color: (primary: $Assignment-primary,
+        accent: $Assignment-accent,
+        warn: $Assignment-warn,
+      )));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($Assignment-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+:root {
+  --dark-blue: #08225a;
+  --blue: #2a63cc;
+  --purple: #64349a;
+  --purple-dark: #64349a;
+  --white-dark: #929db0;
+  --black: #020024;
+  --white-bg: #f5f3f3;
+
+
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-size: 18px;
+}
+
+// =============login page=========
+.login{
+
+  .login-header{  
+  background: #663399;
+  img{
+width: 40px;
+padding: 10px 0px;
+  }
+}
+.login-btn{
+  background: #663399;
+  border-radius: 20px;
+  &:hover{
+    background: #663399;
+  }
+}
+
+}
+
+// =============home page=========
+// topbar
+.top-menu {
+  background: #08225a;
+  font-size: 20px;
+
+  .icon-color {
+    color: white;
+  }
+
+  span {
+    color: white;
+  }
+}
+
+
+
+.tn-grad-icon-angle {
+  background: #020024;
+  background: linear-gradient(121deg, rgba(2, 0, 36, 1) 0%, #2a63cc 0%, #64349a 59%, #63359b 89%);
+  color: white;
+}
+
+// banner
+.banner {
+  max-width: 100%;
+  background: url('./assets/banner.jpg'), linear-gradient(to right, #6DB3F2, #6DB3F2);
+  ;
+  background-color: #cccccc;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+
+  h1 {
+    padding-top: 90px !important;
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size: 25px;
+    padding-top: 20px !important;
+  }
+
+  .btn-grad {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(42, 99, 204, 1) 0%, rgba(100, 52, 154, 1) 91%);
+    color: white;
+    padding: 18px !important;
+    font-size: 20px;
+    font-weight: 500;
+
+  }
+
+  .btn-grad:hover {
+    background-position: right center;
+    color: #d1d1d1;
+    text-decoration: none;
+  }
+
+  .computer-img {
+    max-width: 400px;
+    position: absolute;
+    bottom: -250px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+}
+
+// home-deatils
+.home-deatils {
+  margin-top: 200px;
+
+  button {
+    strong {
+      font-size: 20px;
+    }
+  }
+
+  strong {
+    font-size: 20px;
+  }
+}
+
+// services
+.services {
+  background: #f7f7f7;
+
+  h1 {
+    font-size: 48px;
+    font-weight: 600;
+  }
+
+  .patient-system {
+    box-shadow: 0px 0px 6px black;
+    border-radius: 10px;
+    position: relative;
+
+    .patient-img {
+      width: 100px;
+      height: 50px;
+      position: absolute;
+      bottom: 50%;
+
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .services-card:hover {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+
+  // banner
+.banner {
+  max-width: 100%;
+  background: url('./assets/banner.jpg'), linear-gradient(to right, #6DB3F2, #6DB3F2);
+  ;
+  background-color: #cccccc;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+
+  h1 {
+    padding-top: 90px !important;
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size: 25px;
+    padding-top: 20px !important;
+  }
+
+  .btn-grad {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(42, 99, 204, 1) 0%, rgba(100, 52, 154, 1) 91%);
+    color: white;
+    padding: 18px !important;
+    font-size: 20px;
+    font-weight: 500;
+
+  }
+
+  .btn-grad:hover {
+    background-position: right center;
+    color: #d1d1d1;
+    text-decoration: none;
+  }
+
+  .computer-img {
+    max-width: 350px;
+    position: absolute;
+    bottom: -264px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+}
+
+}
+@media screen and (max-width: 768px) {
+
+
+  // topbar
+  .top-menu {
+    font-size: 16px;
+  }
+
+  .nav-menu {
+    img {
+      width: 170px;
+    }
+  }
+
+  .banner {
+
+    height: 100vh;
+
+    h1 {
+      padding-top: 90px !important;
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 16px;
+      padding-top: 20px !important;
+    }
+
+
+    .btn-grad {
+
+      padding: 10px !important;
+      font-size: 15px;
+
+    }
+
+    .computer-img {
+      max-width: 300px;
+      position: absolute;
+      bottom: -190px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+
+  }
+
+  
+  // services
+.services {
+  h1 {
+    font-size: 36px;
+  }
+
+  .patient-system {
+    width: 100%;
+    height: 300px;
+    position: relative;
+
+    .patient-img {
+      width: 100px;
+      height: 50px;
+      position: absolute;
+      bottom: 50%;
+
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .services-card {
+    background-color: rgb(235, 235, 235);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .services-card:hover {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+}
+.footer{
+  
+  p{
+    font-size: 12px;
+  }
+  i{
+    font-size: 12px;
+  }
+  .footer-menu{
+  font-size: 9px;
+}
+}
+
+}
+@media screen and (max-width: 768px) {
+// topbar
+.top-menu {
+  background: #08225a;
+  font-size: 10px;
+
+}
+
+// banner
+.banner {
+
+  height: 100vh;
+
+  h1 {
+    padding-top: 90px !important;
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 12px;
+    padding-top: 20px !important;
+  }
+
+
+  .btn-grad {
+
+    padding: 10px !important;
+    font-size: 15px;
+
+  }
+
+  .computer-img {
+    max-width: 220px;
+    position: absolute;
+    bottom: -160px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+
+}
+
+// home-deatils
+.home-deatils {
+  margin-top: 150px;
+
+  button {
+    i {
+      font-size: 16px;
+    }
+  }
+
+  strong {
+    font-size: 16px;
+  }
+  p{
+    font-size: 16px;
+   
+  }
+}
+
+// services
+.services {
+  h1 {
+    font-size: 25px;
+  }
+  p{
+    font-size: 16px;
+  }
+
+  .patient-system {
+    width: 100%;
+    height: 300px;
+    position: relative;
+
+    .patient-img {
+      width: 100px;
+      height: 50px;
+      position: absolute;
+      bottom: 50%;
+
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .services-card {
+    background-color: rgb(235, 235, 235);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .services-card:hover {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+}
+.footer{
+  
+  p{
+    font-size: 12px;
+  }
+  i{
+    font-size: 12px;
+  }
+  .footer-menu{
+  font-size: 9px;
+}
+}
+
+
+}
+
+
+
+
+
+
+
+
+

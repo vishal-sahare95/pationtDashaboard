@@ -1,0 +1,112 @@
+ <div class="d-flex justify-content-end me-5 my-3">
+     <button class="btn btn-info" (click)="logOut()">Log out</button>
+ </div>
+
+  <div class="row  ">
+  
+    <div class="col-lg-5 mb-5  col-11">
+           <div class="card col-12 p-5 gx-0">
+        <form [formGroup]="form " class="row">
+        <div class="form-group col-4">
+            <label for="">First name</label>
+            <input type="text"
+                class="form-control" name="" id="" aria-describedby="helpId" placeholder="First name" formControlName="fname">
+            <div class="text-danger" *ngFor="let error of errorMSG.fname">
+                <ng-container *ngIf="fname?.hasError(error.type) && (fname?.touched ||fname?.dirty)">
+                    {{error.message}}
+                </ng-container>
+            </div>
+            </div>
+        <div class=" col-4 mt-2">
+            <label for="">Last name</label>
+            <input type="text"
+                class="form-control" name="" id="" aria-describedby="helpId" placeholder="Last name" formControlName="lname">
+                <div class="text-danger" *ngFor="let error of errorMSG.lname">
+                    <ng-container *ngIf="lname?.hasError(error.type) && (lname?.touched ||lname?.dirty)">
+                        {{error.message}}
+                    </ng-container>
+                </div>
+            </div>
+        <div class=" col-4 mt-2">
+            <label for="">Mobile number</label>
+            <input type="text"
+                class="form-control" name="" id="" aria-describedby="helpId" placeholder="Mobile number" formControlName="mobileNo">
+                <div class="text-danger" *ngFor="let error of errorMSG.mobileNo">
+                    <ng-container *ngIf="mobileNo?.hasError(error.type) && (mobileNo?.touched ||mobileNo?.dirty)">
+                        {{error.message}}
+                    </ng-container>
+                </div>
+        </div>
+        <div class=" col-4 mt-2">
+            <label for="">email</label>
+            <input type="text"
+                class="form-control" name="" id="" aria-describedby="helpId" placeholder="email" formControlName="email">
+                <div class="text-danger" *ngFor="let error of errorMSG.email">
+                    <ng-container *ngIf="email?.hasError(error.type) && (email?.touched ||email?.dirty)">
+                        {{error.message}}
+                    </ng-container>
+                </div>
+            </div>
+        <div class=" col-4 mt-2">
+            <label for="">address1</label>
+            <input type="text"
+                class="form-control" name="" id="" aria-describedby="helpId" placeholder="address1" formControlName="address1">
+                <div class="text-danger" *ngFor="let error of errorMSG.address1">
+                    <ng-container *ngIf="address1?.hasError(error.type) && (address1?.touched ||address1?.dirty)">
+                        {{error.message}}
+                    </ng-container>
+                </div>
+            </div>
+        <div class=" col-4 mt-2">
+            <label for="">address2</label>
+            <input type="text"
+                class="form-control" name="" id="" aria-describedby="helpId" placeholder="address2" formControlName="address2">
+                <div class="text-danger" *ngFor="let error of errorMSG.address2">
+                    <ng-container *ngIf="address2?.hasError(error.type) && (address2?.touched ||address2?.dirty)">
+                        {{error.message}}
+                    </ng-container>
+                </div>
+            </div>
+        <div class=" col-4 mt-2">
+            <label for="">city</label>
+            <input type="text"
+                class="form-control" name="" id="" aria-describedby="helpId" placeholder="city" formControlName="city">
+                <div class="text-danger" *ngFor="let error of errorMSG.city">
+                    <ng-container *ngIf="city?.hasError(error.type) && (city?.touched ||city?.dirty)">
+                        {{error.message}}
+                    </ng-container>
+                </div>
+            </div>
+        <div class=" col-4 mt-2">
+            <label for="">state</label>
+            <input type="text"
+                class="form-control" name="" id="" aria-describedby="helpId" placeholder="state" formControlName="state">
+                <div class="text-danger" *ngFor="let error of errorMSG.state">
+                    <ng-container *ngIf="state?.hasError(error.type) && (state?.touched ||state?.dirty)">
+                        {{error.message}}
+                    </ng-container>
+                </div>
+            </div>
+        <div class=" col-4 mt-2">
+            <label for="">zipcode</label>
+            <input type="text"
+                class="form-control" name="" id="" aria-describedby="helpId" placeholder="zipcode" formControlName="zipcode">
+                <div class="text-danger" *ngFor="let error of errorMSG.zipcode">
+                    <ng-container *ngIf="zipcode?.hasError(error.type) && (zipcode?.touched ||zipcode?.dirty)">
+                        {{error.message}}
+                    </ng-container>
+                </div>
+            </div>
+            <div class="mt-4">
+                <button class="btn btn-info" (click)="save()">add</button>
+            </div>
+            
+        </form>
+    </div>
+    </div>
+ 
+    <div class="col-lg-6 col-11 gx-0">
+         <app-list [pationtArr]="pationtArr"></app-list>
+    </div>
+   
+</div>
